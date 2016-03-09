@@ -1,0 +1,77 @@
+<apex:page standardController="Account" extensions="SLDS_CompoundFormController" docType="html-5.0">
+    <!-- Lightning Design System -->
+    <apex:stylesheet value="{!URLFOR($Resource.SLDS100, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+    <!-- Main -->
+    <div id="vf-page">
+        <apex:form id="form">
+            <apex:pageMessages id="msg" />
+            <div class="slds">
+                <fieldset class="slds-form--compound">
+                    <legend class="slds-form-element__label">Info</legend>
+                    <div class="form-element__group">
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size--1-of-2">
+                                <apex:outputLabel value="{!$ObjectType.Account.Fields.Name.Label}" styleClass="slds-form-element__label" for="accName" />
+                                <apex:inputField value="{!Account.Name}" styleClass="slds-input" id="accName" />
+                            </div>
+                            <div class="slds-form-element slds-size--1-of-2">
+                                <apex:outputLabel value="{!$ObjectType.Account.Fields.AccountNumber.Label}" styleClass="slds-form-element__label" for="accNumber" />
+                                <apex:inputField value="{!Account.AccountNumber}" styleClass="slds-input" id="accNumber" />
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="slds-form--compound">
+                    <legend class="slds-form-element__label">Address</legend>
+                    <div class="form-element__group">
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size--1-of-2">
+                                <apex:outputLabel value="{!$ObjectType.Account.Fields.BillingPostalCode.Label}" styleClass="slds-form-element__label" for="billingPostalCode" />
+                                <apex:inputField value="{!Account.BillingPostalCode}" styleClass="slds-input" id="billingPostalCode" />
+                            </div>
+                        </div>
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size--1-of-2">
+                                <apex:outputLabel value="{!$ObjectType.Account.Fields.BillingState.Label}" styleClass="slds-form-element__label" for="billingState" />
+                                <apex:inputField value="{!Account.BillingState}" styleClass="slds-input" id="billingState" />
+                            </div>
+                            <div class="slds-form-element slds-size--1-of-2">
+                                <apex:outputLabel value="{!$ObjectType.Account.Fields.BillingCity.Label}" styleClass="slds-form-element__label" for="billingCity" />
+                                <apex:inputField value="{!Account.BillingCity}" styleClass="slds-input" id="billingCity" />
+                            </div>
+                        </div>
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size--1-of-1">
+                                <apex:outputLabel value="{!$ObjectType.Account.Fields.BillingStreet.Label}" styleClass="slds-form-element__label" for="billingStreet" />
+                                <apex:inputField value="{!Account.BillingStreet}" styleClass="slds-input" id="billingStreet" />
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="slds-form--compound">
+                    <legend class="slds-form-element__label">Other</legend>
+                    <div class="form-element__group">
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size--1-of-3">
+                                <apex:outputLabel value="{!$ObjectType.Account.Fields.Phone.Label}" styleClass="slds-form-element__label" for="phone" />
+                                <apex:inputField value="{!Account.Phone}" styleClass="slds-input" id="phone" />
+                            </div>
+                            <div class="slds-form-element slds-size--1-of-3">
+                                <apex:outputLabel value="{!$ObjectType.Account.Fields.Fax.Label}" styleClass="slds-form-element__label" for="fax" />
+                                <apex:inputField value="{!Account.Fax}" styleClass="slds-input" id="fax" />
+                            </div>
+                            <div class="slds-form-element slds-size--1-of-3">
+                                <apex:outputLabel value="{!$ObjectType.Account.Fields.Website.Label}" styleClass="slds-form-element__label" for="website" />
+                                <apex:inputField value="{!Account.Website}" styleClass="slds-input" id="website" />
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="slds-m-top--small">
+                    <apex:commandLink value="Save" action="{!Save}" styleClass="slds-button slds-button--brand" reRender="form" />
+                    <apex:commandLink value="Cancel" action="{!Cancel}" styleClass="slds-button slds-button--neutral" reRender="form" />
+                </div>
+            </div>
+        </apex:form>
+    </div>
+</apex:page>

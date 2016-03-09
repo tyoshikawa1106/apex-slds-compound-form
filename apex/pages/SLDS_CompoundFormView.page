@@ -1,0 +1,132 @@
+<apex:page standardController="Account" docType="html-5.0">
+    <!-- Lightning Design System -->
+    <apex:stylesheet value="{!URLFOR($Resource.SLDS100, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+    <!-- Main -->
+    <div id="vf-page">
+        <apex:form id="form">
+            <apex:pageMessages id="msg" />
+            <div class="slds">
+                <fieldset class="slds-form--compound">
+                    <legend class="slds-form-element__label">Info</legend>
+                    <div class="form-element__group">
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size--1-of-2">
+                                <div class="slds-form-element">
+                                    <span class="slds-form-element__label">{!$ObjectType.Account.Fields.Name.Label}</span>
+                                    <div class="slds-form-element__control slds-has-divider--bottom">
+                                        <span class="slds-form-element__static">
+                                            <apex:outputField value="{!Account.Name}" />
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slds-form-element slds-size--1-of-2">
+                                <div class="slds-form-element">
+                                    <span class="slds-form-element__label">{!$ObjectType.Account.Fields.AccountNumber.Label}</span>
+                                    <div class="slds-form-element__control slds-has-divider--bottom">
+                                        <span class="slds-form-element__static">
+                                            <apex:outputField value="{!Account.AccountNumber}" />
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="slds-form--compound">
+                    <legend class="slds-form-element__label">Address</legend>
+                    <div class="form-element__group">
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size--1-of-2">
+                                <div class="slds-form-element">
+                                    <span class="slds-form-element__label">{!$ObjectType.Account.Fields.BillingPostalCode.Label}</span>
+                                    <div class="slds-form-element__control slds-has-divider--bottom">
+                                        <span class="slds-form-element__static">
+                                            <apex:outputField value="{!Account.BillingPostalCode}" />
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size--1-of-2">
+                                <div class="slds-form-element">
+                                    <span class="slds-form-element__label">{!$ObjectType.Account.Fields.BillingState.Label}</span>
+                                    <div class="slds-form-element__control slds-has-divider--bottom">
+                                        <span class="slds-form-element__static">
+                                            <apex:outputField value="{!Account.BillingState}" />
+                                         </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slds-form-element slds-size--1-of-2">
+                                <div class="slds-form-element">
+                                    <span class="slds-form-element__label">{!$ObjectType.Account.Fields.BillingCity.Label}</span>
+                                    <div class="slds-form-element__control slds-has-divider--bottom">
+                                        <span class="slds-form-element__static">
+                                            <apex:outputField value="{!Account.BillingCity}" />
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size--1-of-1">
+                                <div class="slds-form-element">
+                                    <span class="slds-form-element__label">{!$ObjectType.Account.Fields.BillingStreet.Label}</span>
+                                    <div class="slds-form-element__control slds-has-divider--bottom">
+                                        <span class="slds-form-element__static">
+                                            <apex:outputField value="{!Account.BillingStreet}" />
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="slds-form--compound">
+                    <legend class="slds-form-element__label">Other</legend>
+                    <div class="form-element__group">
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size--1-of-3">
+                                <div class="slds-form-element">
+                                    <span class="slds-form-element__label">{!$ObjectType.Account.Fields.Phone.Label}</span>
+                                    <div class="slds-form-element__control slds-has-divider--bottom">
+                                        <span class="slds-form-element__static">
+                                            <apex:outputField value="{!Account.Phone}" />
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slds-form-element slds-size--1-of-3">
+                                <div class="slds-form-element">
+                                    <span class="slds-form-element__label">{!$ObjectType.Account.Fields.Fax.Label}</span>
+                                    <div class="slds-form-element__control slds-has-divider--bottom">
+                                        <span class="slds-form-element__static">
+                                            <apex:outputField value="{!Account.Fax}" />
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slds-form-element slds-size--1-of-3">
+                                <div class="slds-form-element">
+                                    <span class="slds-form-element__label">{!$ObjectType.Account.Fields.Website.Label}</span>
+                                    <div class="slds-form-element__control slds-has-divider--bottom">
+                                        <span class="slds-form-element__static">
+                                            <apex:outputField value="{!Account.Website}" />
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="slds-m-top--small">
+                    <apex:commandLink value="New" action="{!Create}" styleClass="slds-button slds-button--brand" reRender="form" />
+                    <apex:commandLink value="Edit" action="{!Edit}" styleClass="slds-button slds-button--brand" reRender="form" />
+                    <apex:commandLink value="Delete" action="{!Delete}" styleClass="slds-button slds-button--destructive" reRender="form" />
+                </div>
+            </div>
+        </apex:form>
+    </div>
+</apex:page>
